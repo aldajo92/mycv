@@ -1,5 +1,16 @@
 import json
 
+my_name_text = 'Hello!! My name is Alejandro Daniel Jose Gomez Florez\n'
+
+general_info = {'id': '1.020.448.476 from Bello',
+                'born-date': '20/06/1992',
+                'born-origin': 'Medellin, Antioquia',
+                'civil-status': 'Single',
+                'phone': '300 633 8327',
+                'e-mail': 'alejodiscovery20@gmail.com',
+                'github': 'aldajo92',
+                'linkedin': 'aldajo92'}
+
 school = [{'name': 'Colegio Domingo Faustino Sarmiento', 'city': 'Tierralta-Cordoba', 'year': 2004},
           {'name': 'I.E Marco Fidel Suarez', 'city': 'Bello', 'year': 2009}
           ]
@@ -133,18 +144,47 @@ personal_references = [
      'profession': 'Software Engineer'}
 ]
 
+general_info_json = json.dumps(general_info, sort_keys=True, indent=4, separators=(',', ': '))
+skills_json = json.dumps(skills, sort_keys=False, indent=4, separators=(',', ': '))
 school_json = json.dumps(school, sort_keys=True, indent=4, separators=(',', ': '))
 university_json = json.dumps(university, sort_keys=False, indent=4, separators=(',', ': '))
 idioms_json = json.dumps(idioms, sort_keys=True, indent=4, separators=(',', ': '))
 work_experience_json = json.dumps(work_experience, sort_keys=False, indent=4, separators=(',', ': '))
 other_works_json = json.dumps(other_works, sort_keys=False, indent=4, separators=(',', ': '))
-skills_json = json.dumps(skills, sort_keys=False, indent=4, separators=(',', ': '))
 personal_references_json = json.dumps(personal_references, sort_keys=False, indent=4, separators=(',', ': '))
 
-print school_json
-print university_json
-print idioms
-print work_experience_json
-print other_works_json
-print skills_json
-print personal_references_json
+
+def my_name():
+    return my_name_text
+
+
+def general_info():
+    return general_info_json
+
+
+def skills():
+    return skills_json
+
+
+def idioms_that_i_speek():
+    return idioms_json
+
+
+def school_info():
+    return school_json
+
+
+def university_info():
+    return university_json
+
+
+def experience():
+    return work_experience_json
+
+
+def other_works():
+    return other_works_json
+
+
+def personal_references():
+    return personal_references_json
