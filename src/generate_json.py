@@ -1,7 +1,7 @@
 import json
 
 school = [{'name': 'Colegio Domingo Faustino Sarmiento', 'city': 'Tierralta-Cordoba', 'year': 2004},
-          {'name': 'I.E Marco Fidel Suarez', 'city': 'Bello', 'year': 2009}
+          {'name': 'I.E Marco Fidel Suarez', 'city': 'Bello - Antioquia', 'year': 2009}
           ]
 
 university = {
