@@ -2,9 +2,9 @@ import json
 
 my_name_text = 'Hello!! My name is Alejandro Daniel Jose Gomez Florez\n'
 
-general_info = {'id': '1.020.448.476 from Bello',
-                'born-date': '20/06/1992',
-                'born-origin': 'Medellin, Antioquia',
+general_info = {'id': '1020448476',
+                'date-of-birth': '20/06/1992',
+                'place-of-birth': 'Medellin, Antioquia',
                 'civil-status': 'Single',
                 'phone': '300 633 8327',
                 'e-mail': 'alejodiscovery20@gmail.com',
@@ -19,7 +19,6 @@ university = {
     'name': 'Universidad Nacional de Colombia',
     'city': 'Medellin',
     'profession': 'Control Engineering',
-    'finished': False,
     'year': 2010
 }
 
@@ -29,11 +28,36 @@ idioms = {
 }
 
 skills = {
-    'programming languages': ['Android (Java)', 'Java', 'C/C++', 'Javascript', 'Python', 'Matlab'],
-    'frameworks': ['node_js'],
+    'programming languages': ['Java', 'C/C++', 'Javascript', 'Python 2.7', 'Matlab'],
     'GNU/LINUX': True,
     'Agile Methodologies': ['scrum', 'kanban'],
-    'soft skills': 'please contact me... I want know you'
+    'Social skills': 'please contact me... I want to know you',
+    'Git': ['github', 'bitbucket', 'gitlab', 'stash'],
+    'embedded systems': ['Arduino', 'BeagleBone', 'Raspberry Pi', 'Nvidia Jetson']
+}
+
+programming_language_details = {
+    'Java-Android': {
+        'ides': ['Android-Studio', 'eclipse'],
+        'libraries': ['RxAndroid', 'ButterKnife', 'Dagger', 'Retrofit', 'OpenCV', 'Picasso', 'Calligraphy']
+    },
+    'Java': {
+        'ides': ['IntelliJ', 'NetBeans', 'Eclipse'],
+        'frameworks': ['Spring'],
+        'libraries': ['Dagger', 'Retrofit', 'OpenCV', 'SerialPort']
+    },
+    'Javascript':
+        {'environments': 'nodeJS',
+         'ides': ['Sublime', 'Visual Studio'],
+         'frameworks': ['Express'],
+         'libraries': ['OpenCV', 'Johnny-five', 'Serial', 'OpenCV', 'Request']
+         },
+    'Python':
+        {'ides': 'Pycharm',
+         'libraries': ['OpenCV', 'Numpy', 'Matplot', 'pyserial', 'json', 'requests', 'socket']
+         },
+    'Matlab':
+        {'ides': ['matlab', 'octave', 'scilab']}
 }
 
 work_experience = [
@@ -42,21 +66,40 @@ work_experience = [
      'position': 'Android Developer',
      'boss': 'Peter Van Dirk',
      'date': '01/04/2016 - 17/02/2017',
-     'contact': {'phone': '(57-4)604 55 35', 'e-mail': 'mde@hugeinc.com'}
+     'contact': {'phone': '(57-4)604 55 35', 'e-mail': 'mde@hugeinc.com'},
+     "description": "Developing apps with Android (Java) and supporting hardware projects. Part of the Huge Academy initiative to teach technology for underprivileged child."
+     },
+    {'workplace': 'HTM',
+     'city': 'Medellin',
+     'position': 'Developer',
+     'boss': 'Jose Daniel Pena',
+     'date': '05/01/2016 - 15/03/2016',
+     'contact': {'phone': '300 779 0360', 'e-mail': 'josedaniel@htm.com.co'},
+     'description': 'Developing a program running with NodeJS on a Raspberry Pi to send sensor information with a custom protocol to a remote server.'
+     },
+    {'workplace': 'Gora',
+     'city': 'Medellin',
+     'position': 'Teacher',
+     'boss': 'Thomas King',
+     'date': '06/04/2015 - 12/12/2015',
+     'contact': {'phone': '(57-4)311 57 65', 'e-mail': 'thomas@gora.space'},
+     'description': 'Teaching how electronics works with a Raspberry pi and Arduino to create scripts in python'
      },
     {'workplace': 'Ubidots',
      'city': 'Medellin',
      'position': 'Hardware Developer',
      'boss': 'Agustin Pelaez',
      'date': '26/01/2015 - 20/03/2015',
-     'contact': {'phone': '312 834 4182', 'e-mail': 'info@ubidots.com'}
+     'contact': {'phone': '312 834 4182', 'e-mail': 'info@ubidots.com'},
+     'description': 'Developing Hardware to collect data from sensors and send them to the Ubidots platform.'
      },
     {'workplace': 'Universidad Nacional de Colombia',
      'city': 'Medellin',
      'position': 'Teacher Assistant',
      'boss': 'Alcides Montoya',
      'date': '12/02/2013 - 17/08/2013',
-     'contact': {'phone': '(57-4)430 93 27', 'e-mail': ''}
+     'contact': {'phone': '(57-4)430 93 27', 'e-mail': '-'},
+     'description': 'Helping to students to understand physics with programs made in Java and teaching to make simulations with the Swing library.'
      }
 ]
 
@@ -66,49 +109,57 @@ other_works = [
      'Name': 'Huge Change',
      'Date': '17/01/2017',
      'place': 'Ruta-N',
-     'city': 'Medellin'},
+     'city': 'Medellin',
+     'description': 'Part of the Skywalkers team where we created a platform using node.js (server side), python (client side with a Raspberry pi ) and a ios app (client side) to help blind people to navigate in the street with an external hardware.'},
     {'type': 'hackathon',
      'by': 'Huge Inc',
      'Name': '(Winner) AI Challenge',
      'Date': '20/10/2016',
      'place': 'Ruta-N',
-     'city': 'Medellin'},
+     'city': 'Medellin',
+     'description': 'Part of the Mercury team where we created a platform using node.js (server side on a Raspberry pi) and a ios app (client side) to help people to save water using a gamification methodology in a smart shower.'},
     {'type': 'presentation',
      'by': 'MedellinJS',
      'Name': 'Control PID con NodeJS',
      'Date': '08/12/2015',
      'place': 'Ruta-N',
-     'city': 'Medellin'},
+     'city': 'Medellin',
+     'description': 'Combination with a math model feedback on a differential robot to show math applied on this one using a Beaglebone and NodeJS.'},
     {'type': 'presentation',
      'by': 'Python Medellin',
      'Name': 'Robotica con Python',
      'Date': '16/12/2015',
      'place': 'Atomhouse',
-     'city': 'Medellin'},
+     'city': 'Medellin',
+     'description': 'Presentation about tools and libraries to develop robots with the power of python.'},
     {'type': 'Online presentation',
      'by': 'platzi.com',
      'Name': 'Programacion de robots con Nodejs',
      'Date': '20/02/2015',
      'place': 'video conference',
-     'city': 'Medellin'},
-    {'type': 'community',
-     'by': 'Alejandro Gomez (myself)',
+     'city': 'Medellin',
+     'description': 'Presentation about tools and libraries to develop robots with the power of NodeJS.'},
+    {'type': 'community/founder',
+     'by': 'me',
      'Name': 'Robotica Medellin',
      'Date': '17/02/2015',
      'place': 'Medellin',
-     'city': 'Medellin'},
+     'city': 'Medellin',
+     'description': 'Talks and workshop every months in Ruta-N and other places in medellin to share the robotics knowledge.'},
     {'type': 'presentation',
-     'by': 'Python Medellin',
+     'by': 'MedellinJS',
      'Name': 'Robotica y Nodejs',
      'Date': '18/02/2015',
      'place': 'Ruta-N',
-     'city': 'Medellin'},
+     'city': 'Medellin',
+     'description': 'Presentation about tools and libraries to develop robots with the power of NodeJS.'},
     {'type': 'competition',
      'by': 'UN-Robots',
      'Name': 'Competidor Sumo 3kg',
      'Date': '11/04/2014',
      'place': 'Universidad Nacional de Colombia',
-     'city': 'Bogota'}
+     'city': 'Bogota',
+     'description': 'We made an autonomous robot to battle in a sumo category.'}
 ]
 
 personal_references = [
@@ -136,7 +187,7 @@ personal_references = [
      'workplace': 'htm.com.co',
      'position': 'Founder',
      'contact': {'phone': '300 779 0360', 'e-mail': 'josedaniel@htm.com.co'},
-     'profession': 'Software Engineer'},
+     'profession': 'Electronic Engineer'},
     {'name': 'Adrian Estrada',
      'workplace': 'NodeSource',
      'position': 'Support Developer',
@@ -152,6 +203,8 @@ idioms_json = json.dumps(idioms, sort_keys=True, indent=4, separators=(',', ': '
 work_experience_json = json.dumps(work_experience, sort_keys=False, indent=4, separators=(',', ': '))
 other_works_json = json.dumps(other_works, sort_keys=False, indent=4, separators=(',', ': '))
 personal_references_json = json.dumps(personal_references, sort_keys=False, indent=4, separators=(',', ': '))
+programming_language_details_json = json.dumps(programming_language_details, sort_keys=False, indent=4,
+                                               separators=(',', ': '))
 
 
 def my_name():
@@ -166,7 +219,11 @@ def skills():
     return skills_json
 
 
-def idioms_that_i_speek():
+def programming_language():
+    return programming_language_details_json
+
+
+def idioms():
     return idioms_json
 
 

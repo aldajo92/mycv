@@ -45,7 +45,7 @@ work_experience = [
      'position': 'Teacher Assistant',
      'boss': 'Alcides Montoya',
      'date': '12/02/2013 - 17/08/2013',
-     'contact': {'phone': '(57-4)430 93 27', 'e-mail': ''}
+     'contact': {'phone': '(57-4)430 93 27', 'e-mail': 'amontoya@unal.edu.co'}
      }
 ]
 
