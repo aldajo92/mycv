@@ -2,6 +2,8 @@ import json
 
 my_name_text = 'Hello!! My name is Alejandro Daniel Jose Gomez Florez\n'
 
+my_summary = 'I like creating something out of nothing. My motivation is to learn continuously with the purpose to help people in different ways. When I work with teams with a variety of people with different perceptions and motivations, I can learn importance to receive feedback and interact with them when the goal is to give new solutions with lines of codes. I want to be a part of the social change with the technology, because smiles, happy moments, hopes and illusions can come from unexpected moments, and from unexpected sources.\n'
+
 general_info = {'id': '1020448476',
                 'date-of-birth': '20/06/1992',
                 'place-of-birth': 'Medellin, Antioquia',
@@ -245,3 +247,7 @@ def other_works():
 
 def personal_references():
     return personal_references_json
+
+
+def summary():
+    return my_summary
